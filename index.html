@@ -13,20 +13,20 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Online Games - OnlineGameDayDay.com</title>
-    <link rel="canonical" href="https://onlinegamedayday.com">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ScrewDom3D - The Ultimate 3D Domination Game</title>
+    <link rel="canonical" href="https://screwdom3d.org">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        appleBlue: '#0071e3',
-                        appleLightGray: '#f5f5f7',
-                        appleDarkGray: '#1d1d1f',
-                        appleMidGray: '#86868b'
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'apple-light': '#ffffff',
+                        'apple-border': '#d2d2d7'
                     }
                 }
             }
@@ -37,468 +37,354 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-            min-height: 100vh;
+            background-color: #fbfbfd;
             color: #1d1d1f;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
-        .game-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
-            border-radius: 18px;
-            overflow: hidden;
-            background: white;
+        .apple-gradient {
+            background: linear-gradient(135deg, #f5f7ff 0%, #fbfbfd 100%);
+        }
+        
+        .game-frame {
             position: relative;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .game-iframe {
-            border-radius: 12px;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-            background: #000;
-            transition: height 0.3s ease;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background-color: #000;
+            margin: 0 auto;
+            border: 1px solid #e0e0e0;
         }
         
-        .hero-section {
-            background: linear-gradient(120deg, #0071e3 0%, #004e9e 100%);
-            border-radius: 0 0 30px 30px;
-        }
-        
-        .logo {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .section-divider {
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .feature-icon {
-            background: linear-gradient(135deg, #0071e3 0%, #00a2ff 100%);
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-        }
-        
-        footer {
-            background: linear-gradient(120deg, #1d1d1f 0%, #000 100%);
-            border-radius: 30px 30px 0 0;
-        }
-        
-        .fullscreen-btn {
+        .game-frame iframe {
             position: absolute;
-            top: 25px;
-            right: 25px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            padding: 10px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .fullscreen-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .fullscreen-mode {
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 100;
-            background: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .fullscreen-mode .game-iframe {
-            width: 95%;
-            height: 90%;
-            border-radius: 0;
-            box-shadow: none;
-        }
-        
-        .fullscreen-header {
-            width: 95%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            color: white;
-        }
-        
-        .exit-fullscreen {
-            background: rgba(255,255,255,0.2);
             border: none;
-            border-radius: 8px;
-            color: white;
-            padding: 8px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         
-        .exit-fullscreen:hover {
-            background: rgba(255,255,255,0.3);
+        .logo {
+            font-weight: 700;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #0071e3, #7b68ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            display: inline-block;
+        }
+        
+        .logo-icon {
+            display: inline-block;
+            transform: rotate(45deg);
+            margin-right: 8px;
+            color: #0071e3;
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #0071e3, #7b68ee);
+            color: white;
+            border-radius: 16px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 60px auto;
+            width: 80%;
+        }
+        
+        .apple-btn {
+            background: linear-gradient(135deg, #0071e3, #7b68ee);
+            color: white;
+            border-radius: 12px;
+            padding: 14px 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0,113,227,0.3);
+        }
+        
+        .apple-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,113,227,0.4);
+        }
+        
+        .apple-card {
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+        
+        .apple-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         
         @media (max-width: 768px) {
-            .hero-section {
-                border-radius: 0 0 20px 20px;
+            .logo {
+                font-size: 2rem;
             }
             
-            .game-card {
-                border-radius: 14px;
+            .game-frame {
+                border-radius: 12px;
             }
             
-            .fullscreen-btn {
-                top: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 14px;
+            .section-divider {
+                margin: 40px auto;
             }
         }
     </style>
 </head>
-<body class="antialiased">
-    <!-- 导航栏 -->
-    <nav class="bg-white py-4 px-6 shadow-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
-                    <span class="text-white text-xl font-bold">O</span>
-                </div>
-                <span class="text-xl font-bold text-appleDarkGray">OnlineGameDayDay</span>
+<body class="apple-gradient">
+    <!-- Header Section -->
+    <header class="py-12 px-4 md:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-6">
+                <span class="logo-icon">
+                    <i class="fas fa-screwdriver"></i>
+                </span>
+                <h1 class="logo inline-block">ScrewDom3D</h1>
             </div>
-            
-            <div class="flex space-x-6 items-center">
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Home</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Games</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Categories</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">About</a>
-                <button class="bg-appleBlue text-white px-4 py-2 rounded-lg font-medium hover:bg-[#0066cc] transition">Play Now</button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 主标题区域 -->
-    <header class="hero-section py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 logo">Play Online Games</h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-                Play the best online games for free! No downloads, no installations - just instant fun in your browser.
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Experience the ultimate 3D domination game with stunning graphics, intense gameplay, and endless challenges. 
+                Dominate the arena and become the ultimate ScrewDom master!
             </p>
-            <div class="flex justify-center space-x-4">
-                <button class="bg-white text-appleBlue px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-100 transition">
-                    <i class="fas fa-play mr-2"></i> Start Playing
-                </button>
-                <button class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-white/10 transition">
-                    Browse Games
-                </button>
-            </div>
         </div>
     </header>
 
-    <!-- 游戏展示部分 -->
-    <main class="max-w-7xl mx-auto px-6 py-16">
-        <!-- 游戏1：Sprunki -->
-        <section class="game-card mb-20" id="sprunki-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('sprunki')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Sprunki</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Sprunki is an innovative music creation game where you become the composer. Drag and drop different sound icons to create your own unique mix. Each character represents a different sound element - beats, effects, melodies, and voices. Experiment with combinations to unlock special bonus tracks and create amazing musical compositions. Perfect for music lovers and creative minds!
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Music Creation</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Rhythm Game</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Creative</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Relaxing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe" id="sprunki-iframe-container">
-                        <iframe src="https://sprunkiincredibox.org/sprunki-phase-3-rm-but-all-alive.embed" width="100%" height="400" frameborder="0" allowfullscreen id="sprunki-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 游戏2：Colorblockjam -->
-        <section class="game-card mb-20" id="colorblockjam-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('colorblockjam')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Colorblockjam</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="order-2 lg:order-1">
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Colorblockjam is a vibrant puzzle game that challenges your pattern matching skills. Swipe and match colorful blocks to clear the board and earn points. With hundreds of levels, power-ups, and special challenges, this game offers endless entertainment. Strategize your moves to create massive combos and climb the leaderboards. Easy to learn but hard to master - perfect for puzzle enthusiasts!
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Puzzle</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Color Matching</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Strategy</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Addictive</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe order-1 lg:order-2" id="colorblockjam-iframe-container">
-                        <iframe src="https://html5.gamedistribution.com/0e678f2a73174718b682054a8b24ab4b/" width="100%" height="400" frameborder="0" allowfullscreen id="colorblockjam-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 游戏3：Climbingblock -->
-        <section class="game-card" id="climbingblock-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('climbingblock')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Climbingblock</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Climbingblock is an exciting physics-based climbing adventure. Control your block character as you scale increasingly challenging towers. Jump from block to block, avoid obstacles, and collect power-ups to reach new heights. With simple one-touch controls and addictive gameplay, you'll keep coming back to beat your high score. How high can you climb in this ultimate test of skill and timing?
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Platformer</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Adventure</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Skill Game</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Endless</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe" id="climbingblock-iframe-container">
-                        <iframe src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.3344" width="100%" height="400" frameborder="0" allowfullscreen id="climbingblock-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 网站特点 -->
-        <section class="mt-24 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-appleDarkGray">Why Play on OnlineGameDayDay?</h2>
-            <p class="text-xl text-appleMidGray max-w-3xl mx-auto mb-16">
-                We provide the best online gaming experience with no downloads or installations required.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Instant Play</h3>
-                    <p class="text-appleMidGray">No downloads or installations required. Just click and play directly in your browser.</p>
-                </div>
-                
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Mobile Optimized</h3>
-                    <p class="text-appleMidGray">Play on any device - desktop, tablet, or mobile. Our games work everywhere.</p>
-                </div>
-                
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-expand text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Full Screen Experience</h3>
-                    <p class="text-appleMidGray">Enjoy immersive gameplay with our full screen mode for each game.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- 全屏模式容器 -->
-    <div id="fullscreen-container" class="fullscreen-mode hidden">
-        <div class="fullscreen-header">
-            <h2 id="fullscreen-title" class="text-2xl font-bold"></h2>
-            <button class="exit-fullscreen" onclick="exitFullscreen()">
-                <i class="fas fa-times mr-2"></i> Exit Full Screen
-            </button>
-        </div>
-        <div id="fullscreen-iframe-container" class="game-iframe w-full h-full"></div>
-    </div>
-    
-    <!-- 页脚 -->
-    <footer class="mt-24 py-16 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- Game Introduction -->
+    <section class="py-12 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
-                            <span class="text-white text-xl font-bold">O</span>
-                        </div>
-                        <span class="text-xl font-bold">OnlineGameDayDay</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">
-                        Your ultimate destination for free online games. Play anywhere, anytime!
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Unleash Your Domination Skills</h2>
+                    <p class="text-gray-600 mb-6">
+                        ScrewDom3D is a revolutionary 3D action game that combines fast-paced combat with strategic gameplay. 
+                        In a dystopian future, players must navigate complex arenas, outsmart opponents, and dominate the competition.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <p class="text-gray-600 mb-6">
+                        With cutting-edge graphics powered by WebGL and physics-based gameplay, ScrewDom3D delivers an immersive 
+                        experience that will keep you on the edge of your seat. Customize your character, upgrade your weapons, 
+                        and climb the global leaderboards.
+                    </p>
+                    <button class="apple-btn">
+                        <i class="fas fa-play mr-2"></i> Play Now
+                    </button>
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Home</a></li>
-                        <li><a href="#" class="hover:text-white">Popular Games</a></li>
-                        <li><a href="#" class="hover:text-white">New Games</a></li>
-                        <li><a href="#" class="hover:text-white">Categories</a></li>
-                        <li><a href="#" class="hover:text-white">Top Players</a></li>
-                    </ul>
+                <div class="apple-card p-6">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                         alt="ScrewDom3D gameplay" class="rounded-xl w-full h-auto">
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Categories</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Action Games</a></li>
-                        <li><a href="#" class="hover:text-white">Puzzle Games</a></li>
-                        <li><a href="#" class="hover:text-white">Adventure Games</a></li>
-                        <li><a href="#" class="hover:text-white">Sports Games</a></li>
-                        <li><a href="#" class="hover:text-white">Strategy Games</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-6">Support</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white">FAQ</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white">Report a Problem</a></li>
-                    </ul>
-                </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Play ScrewDom3D Now</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Experience the game directly in your browser. No downloads required! 
+                    The game may take a few moments to load - please be patient.
+                </p>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>© 2023 OnlineGameDayDay.com. All rights reserved. Play online games for free!</p>
+            <div class="max-w-4xl mx-auto">
+                <div class="game-frame">
+                    <iframe src="https://app-399470.games.s3.yandex.net/399470/18yy4nc50t6my14y07qmth7e9ztv70jf/index.html" 
+                            allow="autoplay; fullscreen; gamepad" 
+                            title="ScrewDom3D Game"></iframe>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <button class="apple-btn">
+                        <i class="fas fa-expand mr-2"></i> Fullscreen Mode
+                    </button>
+                    <button class="bg-white text-gray-800 border border-gray-300 rounded-2xl px-6 py-3 font-medium hover:bg-gray-50 transition">
+                        <i class="fas fa-share-alt mr-2"></i> Share Game
+                    </button>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Game Features -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Game Features</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Discover what makes ScrewDom3D the most immersive 3D domination experience
+                </p>
             </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="apple-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Immersive 3D Graphics</h3>
+                    <p class="text-gray-600">
+                        Stunning visuals powered by WebGL technology with realistic lighting, shadows, and textures.
+                    </p>
+                </div>
+                
+                <div class="apple-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Intense Combat</h3>
+                    <p class="text-gray-600">
+                        Fast-paced battles with a variety of weapons and special abilities to master.
+                    </p>
+                </div>
+                
+                <div class="apple-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Competitive Leaderboards</h3>
+                    <p class="text-gray-600">
+                        Compete against players worldwide and climb the global rankings.
+                    </p>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Game Details -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">About ScrewDom3D</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Game Overview</h3>
+                    <p class="text-gray-600 mb-6">
+                        ScrewDom3D is set in a futuristic world where players compete in high-stakes arena battles. 
+                        The game combines elements of strategy, action, and skill to create a unique gaming experience.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        With multiple game modes including Deathmatch, Domination, and Survival, players can choose 
+                        their preferred style of play. The game is constantly updated with new maps, weapons, and 
+                        gameplay features.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">System Requirements</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Modern web browser (Chrome, Firefox, Safari, Edge)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Internet connection (5Mbps recommended)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Keyboard or game controller</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Development & Technology</h3>
+                    <p class="text-gray-600 mb-6">
+                        ScrewDom3D is built using cutting-edge web technologies including WebGL for 3D rendering 
+                        and WebAssembly for near-native performance. The game runs directly in your browser without 
+                        any plugins or downloads.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our development team continuously optimizes the game for both desktop and mobile devices, 
+                        ensuring a smooth gaming experience across all platforms.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">Updates & Community</h3>
+                    <p class="text-gray-600">
+                        Join our growing community of players! We release regular updates with new content, 
+                        balance changes, and bug fixes based on player feedback.
+                    </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="logo-icon">
+                        <i class="fas fa-screwdriver"></i>
+                    </span>
+                    <span class="logo">ScrewDom3D</span>
+                </div>
+                
+                <div class="max-w-3xl mx-auto text-gray-600 text-sm">
+                    <p class="mb-4">
+                    </p>
+                    <p class="mb-4">
+                        This site provides access to the game for entertainment purposes only. We do not claim 
+                        ownership of the game or its content. All rights are reserved by the respective copyright holders.
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-700">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="mt-8 text-gray-500 text-sm">
+                    <p>&copy; 2023 ScrewDom3D.org. All rights reserved. | This is a fan site for entertainment purposes.</p>
         </div>
     </footer>
-    
-    <!-- 返回顶部按钮 -->
-    <button id="backToTop" class="fixed bottom-6 right-6 bg-appleBlue text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script>
-        // 返回顶部功能
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0');
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-                backToTopButton.classList.add('opacity-0');
-            }
+        // Fullscreen functionality
+        document.querySelector('.apple-btn').addEventListener('click', function(e) {
+            if (e.target.closest('.apple-btn') && e.target.closest('.apple-btn').textContent.includes('Fullscreen')) {
+                const iframe = document.querySelector('iframe');
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                    iframe.mozRequestFullScreen();
+                } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                    iframe.msRequestFullscreen();
+                }
         });
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // 全屏功能
-        function toggleFullscreen(game) {
-            const container = document.getElementById('fullscreen-container');
-            const iframeContainer = document.getElementById('fullscreen-iframe-container');
-            const title = document.getElementById('fullscreen-title');
-            
-            // 隐藏所有游戏卡片
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.classList.add('hidden');
-            });
-            
-            // 设置游戏标题
-            title.textContent = game.charAt(0).toUpperCase() + game.slice(1);
-            
-            // 获取iframe
-            const iframe = document.getElementById(`${game}-iframe`);
-            
-            // 复制iframe到全屏容器
-            iframeContainer.innerHTML = '';
-            const clonedIframe = iframe.cloneNode(true);
-            clonedIframe.style.width = '100%';
-            clonedIframe.style.height = '100%';
-            iframeContainer.appendChild(clonedIframe);
-            
-            // 显示全屏容器
-            container.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function exitFullscreen() {
-            const container = document.getElementById('fullscreen-container');
-            
-            // 隐藏全屏容器
-            container.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            
-            // 显示所有游戏卡片
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.classList.remove('hidden');
-            });
-        }
-        
-        // 按ESC键退出全屏
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                exitFullscreen();
+        // Play Now button scrolls to game
+        document.querySelectorAll('.apple-btn').forEach(button => {
+            if (button.textContent.includes('Play Now')) {
+                button.addEventListener('click', function() {
+                    document.querySelector('.game-frame').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
             }
         });
     </script>

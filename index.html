@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS8C75FF0"></script>
@@ -13,7 +14,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScrewDom3D - The Ultimate 3D Domination Game</title>
+    <title>Screwdom 3D: Fun Puzzle Game for All Ages | Screwdom3D.org</title>
     <link rel="canonical" href="https://screwdom3d.org">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +27,10 @@
                         'apple-gray': '#f5f5f7',
                         'apple-dark': '#1d1d1f',
                         'apple-light': '#ffffff',
-                        'apple-border': '#d2d2d7'
+                        'apple-border': '#d2d2d7',
+                        'puzzle-blue': '#4a86e8',
+                        'puzzle-green': '#34c759',
+                        'puzzle-yellow': '#ffcc00'
                     }
                 }
             }
@@ -37,30 +41,30 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #fbfbfd;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             color: #1d1d1f;
             line-height: 1.6;
             overflow-x: hidden;
         }
         
-        .apple-gradient {
-            background: linear-gradient(135deg, #f5f7ff 0%, #fbfbfd 100%);
+        .puzzle-gradient {
+            background: linear-gradient(135deg, #f0f7ff 0%, #f8f9fa 100%);
         }
         
-        .game-frame {
+        .game-container {
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 75%; /* Custom aspect ratio */
             overflow: hidden;
             border-radius: 18px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
             background-color: #000;
             margin: 0 auto;
             border: 1px solid #e0e0e0;
         }
         
-        .game-frame iframe {
+        .game-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -70,33 +74,34 @@
         }
         
         .logo {
-            font-weight: 700;
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #0071e3, #7b68ee);
+            font-weight: 800;
+            font-size: 3rem;
+            background: linear-gradient(45deg, #0071e3, #4a86e8, #34c759);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: -0.5px;
+            letter-spacing: -1.5px;
             display: inline-block;
         }
         
         .logo-icon {
             display: inline-block;
             transform: rotate(45deg);
-            margin-right: 8px;
-            color: #0071e3;
+            margin-right: 10px;
+            color: #4a86e8;
+            font-size: 2.5rem;
         }
         
         .feature-icon {
-            background: linear-gradient(135deg, #0071e3, #7b68ee);
+            background: linear-gradient(135deg, #4a86e8, #34c759);
             color: white;
             border-radius: 16px;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
         }
         
@@ -107,64 +112,111 @@
             width: 80%;
         }
         
-        .apple-btn {
-            background: linear-gradient(135deg, #0071e3, #7b68ee);
+        .puzzle-btn {
+            background: linear-gradient(135deg, #4a86e8, #34c759);
             color: white;
-            border-radius: 12px;
-            padding: 14px 28px;
+            border-radius: 14px;
+            padding: 16px 32px;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(0,113,227,0.3);
+            box-shadow: 0 6px 16px rgba(74, 134, 232, 0.25);
+            font-size: 1.1rem;
         }
         
-        .apple-btn:hover {
+        .puzzle-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,113,227,0.4);
+            box-shadow: 0 10px 25px rgba(74, 134, 232, 0.35);
         }
         
-        .apple-card {
-            border-radius: 20px;
+        .puzzle-card {
+            border-radius: 22px;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
             border: 1px solid #eaeaea;
             transition: all 0.3s ease;
+            overflow: hidden;
         }
         
-        .apple-card:hover {
+        .puzzle-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+        }
+        
+        .forum-message {
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            transition: all 0.2s ease;
+        }
+        
+        .forum-message:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .badge-blue {
+            background: linear-gradient(135deg, #4a86e8, #0071e3);
+            color: white;
+        }
+        
+        .badge-green {
+            background: linear-gradient(135deg, #34c759, #28a745);
+            color: white;
+        }
+        
+        .badge-yellow {
+            background: linear-gradient(135deg, #ffcc00, #ff9500);
+            color: white;
+        }
+        
+        .reply-indent {
+            margin-left: 40px;
+            border-left: 3px solid #eaeaea;
+            padding-left: 20px;
         }
         
         @media (max-width: 768px) {
             .logo {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .game-frame {
-                border-radius: 12px;
+            .game-container {
+                border-radius: 14px;
+                padding-bottom: 100%; /* More square on mobile */
             }
             
             .section-divider {
                 margin: 40px auto;
             }
+            
+            .reply-indent {
+                margin-left: 20px;
+            }
         }
     </style>
 </head>
-<body class="apple-gradient">
+<body class="puzzle-gradient">
     <!-- Header Section -->
     <header class="py-12 px-4 md:px-8 text-center">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="mb-6">
                 <span class="logo-icon">
-                    <i class="fas fa-screwdriver"></i>
+                    <i class="fas fa-puzzle-piece"></i>
                 </span>
-                <h1 class="logo inline-block">ScrewDom3D</h1>
+                <h1 class="logo inline-block">Screwdom 3D</h1>
             </div>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Experience the ultimate 3D domination game with stunning graphics, intense gameplay, and endless challenges. 
-                Dominate the arena and become the ultimate ScrewDom master!
+            <p class="text-2xl text-gray-700 max-w-2xl mx-auto font-medium">
+                The Ultimate Brain-Teasing Puzzle Experience for All Ages
             </p>
         </div>
     </header>
@@ -173,153 +225,172 @@
     <section class="py-12 px-4 md:px-8">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="puzzle-card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+                         alt="Screwdom 3D gameplay" class="w-full h-auto">
+                </div>
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Unleash Your Domination Skills</h2>
-                    <p class="text-gray-600 mb-6">
-                        ScrewDom3D is a revolutionary 3D action game that combines fast-paced combat with strategic gameplay. 
-                        In a dystopian future, players must navigate complex arenas, outsmart opponents, and dominate the competition.
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Challenge Your Mind with Screwdom 3D</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        <span class="font-semibold text-blue-600">Screwdom 3D</span> is a captivating puzzle game that tests your problem-solving skills with colorful 3D models and engaging mechanics. 
                     </p>
                     <p class="text-gray-600 mb-6">
-                        With cutting-edge graphics powered by WebGL and physics-based gameplay, ScrewDom3D delivers an immersive 
-                        experience that will keep you on the edge of your seat. Customize your character, upgrade your weapons, 
-                        and climb the global leaderboards.
+                        Designed for players of all ages, this brain-teasing experience combines logic challenges with satisfying ASMR gameplay. 
+                        With no time limits, you can enjoy solving intricate screw puzzles at your own pace.
                     </p>
-                    <button class="apple-btn">
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="badge badge-blue">Brain-Teasing</span>
+                        <span class="badge badge-green">Problem Solving</span>
+                        <span class="badge badge-yellow">ASMR Gameplay</span>
+                        <span class="badge badge-blue">All Ages</span>
+                    </div>
+                    <button class="puzzle-btn">
                         <i class="fas fa-play mr-2"></i> Play Now
                     </button>
                 </div>
-                <div class="apple-card p-6">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
-                         alt="ScrewDom3D gameplay" class="rounded-xl w-full h-auto">
-                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Game Section -->
     <section class="py-16 px-4 md:px-8">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Play ScrewDom3D Now</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Play Screwdom 3D Now</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
                     Experience the game directly in your browser. No downloads required! 
-                    The game may take a few moments to load - please be patient.
                 </p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="game-frame">
+            <div class="max-w-5xl mx-auto">
+                <div class="game-container">
                     <iframe src="https://app-399470.games.s3.yandex.net/399470/18yy4nc50t6my14y07qmth7e9ztv70jf/index.html" 
                             allow="autoplay; fullscreen; gamepad" 
-                            title="ScrewDom3D Game"></iframe>
+                            title="Screwdom 3D Game"></iframe>
                 </div>
                 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <button class="apple-btn">
+                    <button class="puzzle-btn" id="fullscreen-btn">
                         <i class="fas fa-expand mr-2"></i> Fullscreen Mode
                     </button>
-                    <button class="bg-white text-gray-800 border border-gray-300 rounded-2xl px-6 py-3 font-medium hover:bg-gray-50 transition">
+                    <button class="bg-white text-gray-800 border border-gray-300 rounded-2xl px-6 py-3 font-medium hover:bg-gray-50 transition text-lg">
                         <i class="fas fa-share-alt mr-2"></i> Share Game
                     </button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Game Features -->
+    <!-- Features Section -->
     <section class="py-16 px-4 md:px-8">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Game Features</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Discover what makes ScrewDom3D the most immersive 3D domination experience
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Why Players Love Screwdom 3D</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Discover the features that make our puzzle game special
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="apple-card p-8 text-center">
+                <div class="puzzle-card p-8 text-center">
                     <div class="feature-icon mx-auto">
-                        <i class="fas fa-vr-cardboard"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Immersive 3D Graphics</h3>
+                    <h3 class="text-xl font-bold mb-3">Brain-Teasing Challenges</h3>
                     <p class="text-gray-600">
-                        Stunning visuals powered by WebGL technology with realistic lighting, shadows, and textures.
+                        Over 100 unique levels that progressively challenge your problem-solving abilities and spatial reasoning.
                     </p>
                 </div>
                 
-                <div class="apple-card p-8 text-center">
+                <div class="puzzle-card p-8 text-center">
                     <div class="feature-icon mx-auto">
-                        <i class="fas fa-fist-raised"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Intense Combat</h3>
+                    <h3 class="text-xl font-bold mb-3">No Time Pressure</h3>
                     <p class="text-gray-600">
-                        Fast-paced battles with a variety of weapons and special abilities to master.
+                        Enjoy relaxing gameplay with no timers. Solve puzzles at your own pace, anytime.
                     </p>
                 </div>
                 
-                <div class="apple-card p-8 text-center">
+                <div class="puzzle-card p-8 text-center">
                     <div class="feature-icon mx-auto">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-headphones"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Competitive Leaderboards</h3>
+                    <h3 class="text-xl font-bold mb-3">ASMR Experience</h3>
                     <p class="text-gray-600">
-                        Compete against players worldwide and climb the global rankings.
+                        Satisfying sounds and visual effects create a uniquely relaxing puzzle-solving experience.
                     </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- Game Details -->
+    <!-- Forum Section -->
     <section class="py-16 px-4 md:px-8">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">About ScrewDom3D</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Player Community</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Share your thoughts, tips, and experiences with other players
+                </p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Game Overview</h3>
-                    <p class="text-gray-600 mb-6">
-                        ScrewDom3D is set in a futuristic world where players compete in high-stakes arena battles. 
-                        The game combines elements of strategy, action, and skill to create a unique gaming experience.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        With multiple game modes including Deathmatch, Domination, and Survival, players can choose 
-                        their preferred style of play. The game is constantly updated with new maps, weapons, and 
-                        gameplay features.
-                    </p>
+            <div class="puzzle-card p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Post Your Message</h3>
+                <div class="mb-4">
+                    <input type="text" id="username" placeholder="Your Name (Optional)" class="w-full p-3 rounded-xl border border-gray-300 mb-3">
+                    <textarea id="message" placeholder="Share your thoughts about Screwdom 3D..." class="w-full p-3 rounded-xl border border-gray-300 h-32"></textarea>
+                </div>
+                <button id="post-btn" class="puzzle-btn w-full">
+                    <i class="fas fa-paper-plane mr-2"></i> Post Message
+                </button>
+            </div>
+            
+            <div id="forum-messages" class="space-y-5">
+                <!-- Messages will be loaded here -->
+                <div class="forum-message p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">PuzzleMaster42</h4>
+                            <p class="text-gray-500 text-sm">2 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Just completed all levels! The satisfaction of solving the final puzzle is incredible. Highly recommend this game for anyone who loves brain teasers!</p>
+                    <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Reply</button>
                     
-                    <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">System Requirements</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Modern web browser (Chrome, Firefox, Safari, Edge)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Internet connection (5Mbps recommended)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Keyboard or game controller</span>
-                        </li>
-                    </ul>
+                    <div class="reply-indent mt-4">
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">NewPlayer99</h4>
+                                    <p class="text-gray-500 text-xs">1 hour ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">Any tips for level 47? I've been stuck for days!</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Development & Technology</h3>
-                    <p class="text-gray-600 mb-6">
-                        ScrewDom3D is built using cutting-edge web technologies including WebGL for 3D rendering 
-                        and WebAssembly for near-native performance. The game runs directly in your browser without 
-                        any plugins or downloads.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        Our development team continuously optimizes the game for both desktop and mobile devices, 
-                        ensuring a smooth gaming experience across all platforms.
-                    </p>
-                    
-                    <h3 class="text-2xl font-bold mt-8 mb-4 text-gray-800">Updates & Community</h3>
-                    <p class="text-gray-600">
-                        Join our growing community of players! We release regular updates with new content, 
-                        balance changes, and bug fixes based on player feedback.
-                    </p>
+                <div class="forum-message p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">RelaxationGamer</h4>
+                            <p class="text-gray-500 text-sm">1 day ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">The ASMR elements in this game are fantastic. So relaxing to play before bed. The sound design deserves an award!</p>
+                    <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Reply</button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button id="load-more" class="bg-white text-gray-700 border border-gray-300 rounded-xl px-6 py-3 font-medium hover:bg-gray-50 transition">
+                    <i class="fas fa-chevron-down mr-2"></i> Load More Messages
+                </button>
+            </div>
         </div>
     </section>
 
@@ -329,63 +400,238 @@
             <div class="text-center">
                 <div class="mb-8">
                     <span class="logo-icon">
-                        <i class="fas fa-screwdriver"></i>
+                        <i class="fas fa-puzzle-piece"></i>
                     </span>
-                    <span class="logo">ScrewDom3D</span>
+                    <span class="logo">Screwdom 3D</span>
                 </div>
                 
                 <div class="max-w-3xl mx-auto text-gray-600 text-sm">
                     <p class="mb-4">
+                        Disclaimer: Screwdom 3D is a free-to-play browser puzzle game. This website is not affiliated with, 
+                        maintained, authorized, endorsed, or sponsored by any game development company. All game 
+                        content and trademarks are the property of their respective owners.
                     </p>
-                    <p class="mb-4">
-                        This site provides access to the game for entertainment purposes only. We do not claim 
-                        ownership of the game or its content. All rights are reserved by the respective copyright holders.
+                    <p>
+                        By accessing and playing Screwdom 3D through this website, you agree to do so at your own risk. 
+                        The website owners are not responsible for any issues that may arise from playing the game.
                     </p>
                 </div>
                 
                 <div class="mt-8 flex justify-center space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-gray-700">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="#" class="text-gray-500 hover:text-blue-600">
+                        <i class="fab fa-facebook-f fa-lg"></i>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">
-                        <i class="fab fa-twitter"></i>
+                    <a href="#" class="text-gray-500 hover:text-blue-400">
+                        <i class="fab fa-twitter fa-lg"></i>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">
-                        <i class="fab fa-discord"></i>
+                    <a href="#" class="text-gray-500 hover:text-purple-600">
+                        <i class="fab fa-discord fa-lg"></i>
                     </a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">
-                        <i class="fab fa-youtube"></i>
+                    <a href="#" class="text-gray-500 hover:text-red-600">
+                        <i class="fab fa-youtube fa-lg"></i>
                     </a>
                 </div>
+                
                 <div class="mt-8 text-gray-500 text-sm">
-                    <p>&copy; 2023 ScrewDom3D.org. All rights reserved. | This is a fan site for entertainment purposes.</p>
+                    <p>&copy; 2023 Screwdom3D.org. All rights reserved. | This is a fan site for entertainment purposes.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
         // Fullscreen functionality
-        document.querySelector('.apple-btn').addEventListener('click', function(e) {
-            if (e.target.closest('.apple-btn') && e.target.closest('.apple-btn').textContent.includes('Fullscreen')) {
-                const iframe = document.querySelector('iframe');
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.mozRequestFullScreen) { /* Firefox */
-                    iframe.mozRequestFullScreen();
-                } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) { /* IE/Edge */
-                    iframe.msRequestFullscreen();
-                }
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
         });
         
         // Play Now button scrolls to game
-        document.querySelectorAll('.apple-btn').forEach(button => {
-            if (button.textContent.includes('Play Now')) {
-                button.addEventListener('click', function() {
-                    document.querySelector('.game-frame').scrollIntoView({ 
-                        behavior: 'smooth' 
-                    });
+        document.querySelector('.puzzle-btn').addEventListener('click', function() {
+            document.querySelector('.game-container').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+        
+        // Forum functionality
+        const badWords = ['idiot', 'stupid', 'hate', 'moron', 'suck', 'loser', 'fool'];
+        
+        document.getElementById('post-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value || 'Anonymous';
+            let message = document.getElementById('message').value;
+            
+            if (!message.trim()) {
+                alert('Please enter a message');
+                return;
             }
+            
+            // Filter bad words
+            badWords.forEach(word => {
+                const regex = new RegExp(word, 'gi');
+                message = message.replace(regex, '*'.repeat(word.length));
+            });
+            
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.className = 'forum-message p-5';
+            messageElement.innerHTML = `
+                <div class="flex items-center mb-3">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">${username}</h4>
+                        <p class="text-gray-500 text-sm">Just now</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">${message}</p>
+                <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Reply</button>
+            `;
+            
+            // Prepend to forum
+            document.getElementById('forum-messages').prepend(messageElement);
+            
+            // Clear form
+            document.getElementById('message').value = '';
+            document.getElementById('username').value = '';
+            
+            // Add event listener to new reply button
+            messageElement.querySelector('.reply-btn').addEventListener('click', function() {
+                const replyText = prompt('Enter your reply:');
+                if (replyText && replyText.trim()) {
+                    let filteredReply = replyText;
+                    badWords.forEach(word => {
+                        const regex = new RegExp(word, 'gi');
+                        filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                    });
+                    
+                    const replyElement = document.createElement('div');
+                    replyElement.className = 'reply-indent mt-4';
+                    replyElement.innerHTML = `
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">Anonymous</h4>
+                                    <p class="text-gray-500 text-xs">Just now</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">${filteredReply}</p>
+                        </div>
+                    `;
+                    
+                    messageElement.appendChild(replyElement);
+                }
+            });
+        });
+        
+        // Add reply functionality to existing buttons
+        document.querySelectorAll('.reply-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const replyText = prompt('Enter your reply:');
+                if (replyText && replyText.trim()) {
+                    let filteredReply = replyText;
+                    badWords.forEach(word => {
+                        const regex = new RegExp(word, 'gi');
+                        filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                    });
+                    
+                    const messageElement = this.closest('.forum-message');
+                    const replyElement = document.createElement('div');
+                    replyElement.className = 'reply-indent mt-4';
+                    replyElement.innerHTML = `
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">Anonymous</h4>
+                                    <p class="text-gray-500 text-xs">Just now</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">${filteredReply}</p>
+                        </div>
+                    `;
+                    
+                    messageElement.appendChild(replyElement);
+                }
+            });
+        });
+        
+        // Load more messages functionality
+        document.getElementById('load-more').addEventListener('click', function() {
+            const messages = [
+                {
+                    username: "PuzzleLover",
+                    time: "3 days ago",
+                    message: "I play this with my kids every evening. It's educational and fun - perfect combination!"
+                },
+                {
+                    username: "StrategyGamer",
+                    time: "4 days ago",
+                    message: "Level 58 solution: rotate the blue screw first, then the green one. Took me forever to figure out!"
+                },
+                {
+                    username: "ASMRFan",
+                    time: "5 days ago",
+                    message: "The sound when you solve a puzzle is so satisfying. Best ASMR experience in a game!"
+                }
+            ];
+            
+            messages.forEach(msg => {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'forum-message p-5';
+                messageElement.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">${msg.username}</h4>
+                            <p class="text-gray-500 text-sm">${msg.time}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">${msg.message}</p>
+                    <button class="text-blue-600 font-medium reply-btn mt-3"><i class="fas fa-reply mr-1"></i> Reply</button>
+                `;
+                
+                document.getElementById('forum-messages').appendChild(messageElement);
+                
+                // Add event listener to new reply button
+                messageElement.querySelector('.reply-btn').addEventListener('click', function() {
+                    const replyText = prompt('Enter your reply:');
+                    if (replyText && replyText.trim()) {
+                        let filteredReply = replyText;
+                        badWords.forEach(word => {
+                            const regex = new RegExp(word, 'gi');
+                            filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                        });
+                        
+                        const replyElement = document.createElement('div');
+                        replyElement.className = 'reply-indent mt-4';
+                        replyElement.innerHTML = `
+                            <div class="forum-message p-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                    <div class="ml-3">
+                                        <h4 class="font-bold text-gray-800">Anonymous</h4>
+                                        <p class="text-gray-500 text-xs">Just now</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">${filteredReply}</p>
+                            </div>
+                        `;
+                        
+                        messageElement.appendChild(replyElement);
+                    }
+                });
+            });
+            
+            this.textContent = "No More Messages";
+            this.disabled = true;
         });
     </script>
 </body>

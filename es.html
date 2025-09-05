@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGS8C75FF0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LGS8C75FF0');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screwdom 3D: Divertido Juego de Rompecabezas para Todas las Edades | Screwdom3D.org</title>
+    <link rel="canonical" href="https://screwdom3d.org">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#0071e3',
+                        'apple-gray': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'apple-light': '#ffffff',
+                        'apple-border': '#d2d2d7',
+                        'puzzle-blue': '#4a86e8',
+                        'puzzle-green': '#34c759',
+                        'puzzle-yellow': '#ffcc00'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            color: #1d1d1f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .puzzle-gradient {
+            background: linear-gradient(135deg, #f0f7ff 0%, #f8f9fa 100%);
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* Custom aspect ratio */
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            background-color: #000;
+            margin: 0 auto;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 3rem;
+            background: linear-gradient(45deg, #0071e3, #4a86e8, #34c759);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1.5px;
+            display: inline-block;
+        }
+        
+        .logo-icon {
+            display: inline-block;
+            transform: rotate(45deg);
+            margin-right: 10px;
+            color: #4a86e8;
+            font-size: 2.5rem;
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #4a86e8, #34c759);
+            color: white;
+            border-radius: 16px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            margin: 60px auto;
+            width: 80%;
+        }
+        
+        .puzzle-btn {
+            background: linear-gradient(135deg, #4a86e8, #34c759);
+            color: white;
+            border-radius: 14px;
+            padding: 16px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(74, 134, 232, 0.25);
+            font-size: 1.1rem;
+        }
+        
+        .puzzle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 134, 232, 0.35);
+        }
+        
+        .puzzle-card {
+            border-radius: 22px;
+            background: white;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .puzzle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+        }
+        
+        .forum-message {
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            transition: all 0.2s ease;
+        }
+        
+        .forum-message:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .badge-blue {
+            background: linear-gradient(135deg, #4a86e8, #0071e3);
+            color: white;
+        }
+        
+        .badge-green {
+            background: linear-gradient(135deg, #34c759, #28a745);
+            color: white;
+        }
+        
+        .badge-yellow {
+            background: linear-gradient(135deg, #ffcc00, #ff9500);
+            color: white;
+        }
+        
+        .reply-indent {
+            margin-left: 40px;
+            border-left: 3px solid #eaeaea;
+            padding-left: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .game-container {
+                border-radius: 14px;
+                padding-bottom: 100%; /* More square on mobile */
+            }
+            
+            .section-divider {
+                margin: 40px auto;
+            }
+            
+            .reply-indent {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="puzzle-gradient">
+    <!-- Header Section -->
+    <header class="py-12 px-4 md:px-8 text-center">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-6">
+                <span class="logo-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </span>
+                <h1 class="logo inline-block">Screwdom 3D</h1>
+            </div>
+            <p class="text-2xl text-gray-700 max-w-2xl mx-auto font-medium">
+                La Experiencia Definitiva de Rompecabezas para Todas las Edades
+            </p>
+        </div>
+    </header>
+
+    <!-- Game Introduction -->
+    <section class="py-12 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="puzzle-card overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+                         alt="Screwdom 3D gameplay" class="w-full h-auto">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Desafía Tu Mente con Screwdom 3D</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        <span class="font-semibold text-blue-600">Screwdom 3D</span> es un cautivador juego de rompecabezas que prueba tus habilidades de resolución de problemas con modelos 3D coloridos y mecánicas atractivas. 
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Diseñado para jugadores de todas las edades, esta experiencia mental combina desafíos de lógica con una jugabilidad ASMR satisfactoria. 
+                        Sin límites de tiempo, puedes disfrutar resolviendo intrincados rompecabezas de tornillos a tu propio ritmo.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span class="badge badge-blue">Desafío Mental</span>
+                        <span class="badge badge-green">Resolución de Problemas</span>
+                        <span class="badge badge-yellow">Jugabilidad ASMR</span>
+                        <span class="badge badge-blue">Todas las Edades</span>
+                    </div>
+                    <button class="puzzle-btn">
+                        <i class="fas fa-play mr-2"></i> Jugar Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Juega Screwdom 3D Ahora</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Experimenta el juego directamente en tu navegador. ¡No se requieren descargas! 
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="game-container">
+                    <iframe src="https://app-399470.games.s3.yandex.net/399470/18yy4nc50t6my14y07qmth7e9ztv70jf/index.html" 
+                            allow="autoplay; fullscreen; gamepad" 
+                            title="Screwdom 3D Game"></iframe>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <button class="puzzle-btn" id="fullscreen-btn">
+                        <i class="fas fa-expand mr-2"></i> Pantalla Completa
+                    </button>
+                    <button class="bg-white text-gray-800 border border-gray-300 rounded-2xl px-6 py-3 font-medium hover:bg-gray-50 transition text-lg">
+                        <i class="fas fa-share-alt mr-2"></i> Compartir Juego
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Por Qué Los Jugadores Aman Screwdom 3D</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Descubre las características que hacen especial nuestro juego de rompecabezas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="puzzle-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Desafíos Mentales</h3>
+                    <p class="text-gray-600">
+                        Más de 100 niveles únicos que desafían progresivamente tus habilidades de resolución de problemas y razonamiento espacial.
+                    </p>
+                </div>
+                
+                <div class="puzzle-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sin Presión de Tiempo</h3>
+                    <p class="text-gray-600">
+                        Disfruta de una jugabilidad relajante sin temporizadores. Resuelve rompecabezas a tu propio ritmo, en cualquier momento.
+                    </p>
+                </div>
+                
+                <div class="puzzle-card p-8 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Experiencia ASMR</h3>
+                    <p class="text-gray-600">
+                        Sonidos satisfactorios y efectos visuales crean una experiencia de resolución de rompecabezas única y relajante.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Guide Section -->
+    <section class="mb-16">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Guía de Juego</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Domina el arte de los rompecabezas de tornillos con nuestra guía paso a paso</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Gameplay Steps -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-center text-purple-600">Pasos de Juego</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mb-4">1</div>
+                            <h4 class="text-xl font-bold mb-3">Observa la Estructura</h4>
+                            <p class="text-gray-700">Comienza examinando el objeto 3D e identificando los diferentes tornillos de colores y sus posiciones. Tómate tu tiempo para entender el diseño del rompecabezas.</p>
+                            <div class="mt-4 flex items-center">
+                                <span class="w-6 h-6 bg-red-500 rounded-full mr-2"></span>
+                                <span class="w-6 h-6 bg-blue-500 rounded-full mr-2"></span>
+                                <span class="w-6 h-6 bg-green-500 rounded-full mr-2"></span>
+                                <span class="w-6 h-6 bg-yellow-500 rounded-full mr-2"></span>
+                                <span class="ml-4 text-gray-500">Múltiples colores</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mb-4">2</div>
+                            <h4 class="text-xl font-bold mb-3">Remoción Estratégica</h4>
+                            <p class="text-gray-700">Retira cuidadosamente los tornillos, uno a la vez, asegurándote de no crear bloqueos o hacer movimientos que dificulten el progreso futuro. ¡Piensa antes de destornillar!</p>
+                            <div class="mt-4">
+                                <i class="fas fa-hand-pointer text-2xl text-purple-600 mr-3"></i>
+                                <span class="text-gray-500">Haz clic para retirar tornillos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mb-4">3</div>
+                            <h4 class="text-xl font-bold mb-3">Coincidencia de Colores</h4>
+                            <p class="text-gray-700">Mueve los tornillos retirados a las bandejas designadas, asegurándote de que cada bandeja solo contenga tornillos del mismo color. ¡La organización es clave!</p>
+                            <div class="mt-4 flex items-center">
+                                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-box text-red-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <span class="text-gray-500">Bandeja roja</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mb-4">4</div>
+                            <h4 class="text-xl font-bold mb-3">Desbloquea Niveles</h4>
+                            <p class="text-gray-700">A medida que clasificas exitosamente los tornillos y completas niveles, desbloquearás nuevas estructuras 3D y rompecabezas más desafiantes.</p>
+                            <div class="mt-4 flex items-center">
+                                <i class="fas fa-lock-open text-2xl text-green-500 mr-3"></i>
+                                <span class="text-gray-500">Desbloquea nuevos desafíos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mb-4">5</div>
+                            <h4 class="text-xl font-bold mb-3">Utiliza Herramientas</h4>
+                            <p class="text-gray-700">El juego puede ofrecer herramientas como bandejas adicionales o un área de retención para tornillos, que pueden obtenerse mediante moneda del juego o viendo anuncios.</p>
+                            <div class="mt-4 flex items-center">
+                                <i class="fas fa-tools text-2xl text-blue-500 mr-3"></i>
+                                <span class="text-gray-500">Usa herramientas estratégicamente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tips for Success -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-center text-green-600">Consejos para el Éxito</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-chess text-2xl text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Planifica Tus Movimientos</h4>
+                                    <p class="text-gray-700">Antes de retirar un tornillo, considera las consecuencias potenciales para otros tornillos y la estructura general. Piensa 2-3 movimientos adelante.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-sort-amount-down text-2xl text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Considera el Orden</h4>
+                                    <p class="text-gray-700">El orden en el que retiras los tornillos es crucial para evitar bloqueos. A veces retirar primero un tornillo de fácil acceso puede crear problemas después.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-toolbox text-2xl text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Usa Herramientas Sabiamente</h4>
+                                    <p class="text-gray-700">Si están disponibles, usa bandejas adicionales o el área de retención para gestionar los tornillos efectivamente. Guarda tus herramientas para cuando realmente las necesites.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-search text-2xl text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Domina la Observación</h4>
+                                    <p class="text-gray-700">Presta mucha atención a los colores y posiciones de los tornillos para desarrollar estrategias de clasificación efectivas. Haz zoom y gira la estructura para obtener mejores vistas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-green-500">
+                            <div class="flex items-start">
+                                <i class="fas fa-smile text-2xl text-green-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Disfruta del Desafío</h4>
+                                    <p class="text-gray-700">Screwdom 3D está diseñado para ser relajante pero atractivo. Tómate tu tiempo y disfruta del proceso de resolver cada nivel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level Progression -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">Progresión de Niveles</h3>
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center mb-6 md:mb-0">
+                        <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-4xl text-green-500"></i>
+                        </div>
+                        <h4 class="font-bold text-lg">Niveles Principiantes</h4>
+                        <p class="text-gray-600 max-w-xs">Estructuras simples con 2-3 colores y 10-15 tornillos para aprender las mecánicas</p>
+                    </div>
+                    
+                    <div class="hidden md:block">
+                        <i class="fas fa-arrow-right text-2xl text-gray-400 mx-4"></i>
+                    </div>
+                    <div class="md:hidden my-4">
+                        <i class="fas fa-arrow-down text-2xl text-gray-400"></i>
+                    </div>
+                    
+                    <div class="text-center mb-6 md:mb-0">
+                        <div class="w-24 h-24 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tree text-4xl text-purple-500"></i>
+                        </div>
+                        <h4 class="font-bold text-lg">Desafíos Intermedios</h4>
+                        <p class="text-gray-600 max-w-xs">Estructuras complejas con 4-5 colores y 20-30 tornillos que requieren estrategia</p>
+                    </div>
+                    
+                    <div class="hidden md:block">
+                        <i class="fas fa-arrow-right text-2xl text-gray-400 mx-4"></i>
+                    </div>
+                    <div class="md:hidden my-4">
+                        <i class="fas fa-arrow-down text-2xl text-gray-400"></i>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mountain text-4xl text-red-500"></i>
+                        </div>
+                        <h4 class="font-bold text-lg">Rompecabezas Expertos</h4>
+                        <p class="text-gray-600 max-w-xs">Diseños intrincados con múltiples capas, 6+ colores y 40+ tornillos para verdaderos maestros</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Preview Embed Solution</title>
+    <style>
+        /* Add unique namespaces to avoid style conflicts */
+        .game-preview-container {
+            --gp-primary: #2c2c54;
+            --gp-secondary: #40407a;
+            --gp-accent: #00cec9;
+            --gp-text: #ffffff;
+            --gp-bg: #1a1a2e;
+            --gp-card-bg: linear-gradient(145deg, var(--gp-primary), var(--gp-secondary));
+            --gp-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            --gp-button: linear-gradient(45deg, var(--gp-accent), #0984e3);
+            
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--gp-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+        
+        /* Avoid global style effects */
+        .game-preview-container * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        /* Component internal style */
+        .game-preview-container .gp-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .game-preview-container .gp-header h2 {
+            font-size: 2.2rem;
+            color: var(--gp-text);
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.2);
+        }
+        
+        .game-preview-container .gp-header p {
+            color: #b8c1ec;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .game-preview-container .gp-games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .game-preview-container .gp-game-card {
+            width: calc(25% - 20px); /* 4 per row */
+            min-width: 250px;
+            background: var(--gp-card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .game-preview-container .gp-game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .game-preview-container .gp-game-link {
+            display: block;
+        }
+        
+        .game-preview-container .gp-image-container {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .game-preview-container .gp-game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .game-preview-container .gp-game-card:hover .gp-game-image {
+            transform: scale(1.05);
+        }
+        
+        .game-preview-container .gp-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gp-overlay);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .game-preview-container .gp-game-card:hover .gp-overlay {
+            opacity: 1;
+        }
+        
+        .game-preview-container .gp-play-btn {
+            background: var(--gp-button);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 206, 201, 0.3);
+        }
+        
+        .game-preview-container .gp-play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(0, 206, 201, 0.5);
+        }
+        
+        .game-preview-container .gp-game-info {
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .game-preview-container .gp-game-title {
+            font-size: 1.2rem;
+            color: var(--gp-text);
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .game-preview-container .gp-game-title i {
+            color: #ffb142;
+            font-size: 1rem;
+        }
+        
+        .game-preview-container .gp-game-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 12px;
+            margin-top: 10px;
+        }
+        
+        .game-preview-container .gp-game-genre, 
+        .game-preview-container .gp-game-rating {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .game-preview-container .gp-game-genre {
+            color: #b8c1ec;
+        }
+        
+        .game-preview-container .gp-game-rating {
+            color: #ffb142;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .game-preview-container .gp-game-card {
+                width: calc(33.333% - 20px); /* 3 in a row */
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .game-preview-container .gp-game-card {
+                width: calc(50% - 20px); /* 2 in a row */
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .game-preview-container .gp-game-card {
+                width: 100%; /* 1 in a row */
+                max-width: 350px;
+            }
+            
+            .game-preview-container .gp-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .game-preview-container .gp-footer-note {
+            text-align: center;
+            margin-top: 25px;
+            color: #b8c1ec;
+            font-size: 0.9rem;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Original website content -->
+        
+        <!-- Game Preview Component - Copy from here -->
+        <div class="game-preview-container">
+            <div class="gp-header">
+                <h2>Popular game recommendations</h2>
+                <p>Selected 8 popular games, click on the picture to start the game in a new window</p>
+            </div>
+            
+            <div class="gp-games">
+                <!--Game 1 -->
+                <div class="gp-game-card">
+                    <a href="https://screwdom3d.org/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/screwdom3d-600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screwdom3d" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-rocket"></i>Screwdom 3d</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">puzzle | casual</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.8
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 2 -->
+                <div class="gp-game-card">
+                    <a href="https://climbingblock.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/climbingblock600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="climbingblock" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-hat-wizard"></i>Climbing Block</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">climb | jump</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.7
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 3 -->
+                <div class="gp-game-card">
+                    <a href="https://screamals.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/screamals600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="screamals" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-car"></i>Screamals</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">casual | sports</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.9
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 4 -->
+                <div class="gp-game-card">
+                    <a href="https://cutinhalf.org/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/cutinhalf600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="cutinhalf" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-cube"></i>Cut in Half</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">slice | puzzle</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.6
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 5 -->
+                <div class="gp-game-card">
+                    <a href="https://onlinerobotroyale.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/onlinerobotroyale600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="onlinerobotroyale" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-user-secret"></i>Online Robot Royale</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">robot | shooting</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.8
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 6 -->
+                <div class="gp-game-card">
+                    <a href="https://craftbrainrot.xyz/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/craftbrainrot600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="craftbrainrot" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-futbol"></i>Craft Brainrot</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">puzzle | exercise</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.7
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 7 -->
+                <div class="gp-game-card">
+                    <a href="https://pilesofmahjong.com/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/pilesofmahjong600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="piles of mahjong" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-candy-cane"></i>Piles of Pahjong</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">puzzle | casual</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.5
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Game 8 -->
+                <div class="gp-game-card">
+                    <a href="https://zomblox.xyz/" target="_blank" class="gp-game-link">
+                        <div class="gp-image-container">
+                            <img src="https://onlinegamedayday.com/zomblox600.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="zomblox" class="gp-game-image">
+                            <div class="gp-overlay">
+                                <button class="gp-play-btn">
+                                    <i class="fas fa-play"></i>Play Now
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gp-game-info">
+                            <h3 class="gp-game-title"><i class="fas fa-dragon"></i>Zomblox</h3>
+                            <div class="gp-game-meta">
+                                <span class="gp-game-genre">casual | shooting</span>
+                                <span class="gp-game-rating">
+                                    <i class="fas fa-star"></i>4.9
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gp-footer-note">
+                All games will open in a new window
+            </div>
+        </div>
+        <!-- Game Preview Component - End copying here -->
+        
+        <!-- The original content of the website continues -->
+        </div>
+    </div>
+
+    <!-- Font Awesome Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Add click effects
+        document.querySelectorAll('.gp-game-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Preventing a button from being triggered twice when clicked
+                if (e.target.classList.contains('gp-play-btn')) return;
+                
+                const button = this.querySelector('.gp-play-btn');
+                if (button) {
+                    button.classList.add('clicked');
+                    setTimeout(() => {
+                        button.classList.remove('clicked');
+                    }, 300);
+                }
+            });
+        });
+    </script>
+
+    <!-- Forum Section -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Comunidad de Jugadores</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Comparte tus pensamientos, consejos y experiencias con otros jugadores
+                </p>
+            </div>
+            
+            <div class="puzzle-card p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Publica Tu Mensaje</h3>
+                <div class="mb-4">
+                    <input type="text" id="username" placeholder="Tu Nombre (Opcional)" class="w-full p-3 rounded-xl border border-gray-300 mb-3">
+                    <textarea id="message" placeholder="Comparte tus pensamientos sobre Screwdom 3D..." class="w-full p-3 rounded-xl border border-gray-300 h-32"></textarea>
+                </div>
+                <button id="post-btn" class="puzzle-btn w-full">
+                    <i class="fas fa-paper-plane mr-2"></i> Publicar Mensaje
+                </button>
+            </div>
+            
+            <div id="forum-messages" class="space-y-5">
+                <!-- Messages will be loaded here -->
+                <div class="forum-message p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">MaestroRompecabezas42</h4>
+                            <p class="text-gray-500 text-sm">Hace 2 horas</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">¡Acabo de completar todos los niveles! La satisfacción de resolver el rompecabezas final es increíble. ¡Recomiendo mucho este juego para cualquiera que ame los desafíos mentales!</p>
+                    <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Responder</button>
+                    
+                    <div class="reply-indent mt-4">
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">JugadorNuevo99</h4>
+                                    <p class="text-gray-500 text-xs">Hace 1 hora</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">¿Algún consejo para el nivel 47? ¡Llevo días atascado!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forum-message p-5">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">JugadorRelajado</h4>
+                            <p class="text-gray-500 text-sm">Hace 1 día</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Los elementos ASMR en este juego son fantásticos. Muy relajante para jugar antes de dormir. ¡El diseño de sonido merece un premio!</p>
+                    <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Responder</button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button id="load-more" class="bg-white text-gray-700 border border-gray-300 rounded-xl px-6 py-3 font-medium hover:bg-gray-50 transition">
+                    <i class="fas fa-chevron-down mr-2"></i> Cargar Más Mensajes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="logo-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </span>
+                    <span class="logo">Screwdom 3D</span>
+                </div>
+                
+                <div class="max-w-3xl mx-auto text-gray-600 text-sm">
+                    <p class="mb-4">
+                        Descargo de responsabilidad: Screwdom 3D es un juego de rompecabezas gratuito para navegador. Este sitio web no está afiliado, 
+                        mantenido, autorizado, respaldado o patrocinado por ninguna empresa de desarrollo de juegos. Todo el contenido del juego 
+                        y las marcas comerciales son propiedad de sus respectivos dueños.
+                    </p>
+                    <p>
+                        Al acceder y jugar Screwdom 3D a través de este sitio web, aceptas hacerlo bajo tu propio riesgo. 
+                        Los propietarios del sitio web no son responsables de ningún problema que pueda surgir al jugar el juego.
+                    </p>
+                </div>
+                
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="https://www.facebook.com/" class="text-gray-500 hover:text-blue-600">
+                        <i class="fab fa-facebook-f fa-lg"></i>
+                    </a>
+                    <a href="https://x.com/" class="text-gray-500 hover:text-blue-400">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="https://discord.com/" class="text-gray-500 hover:text-purple-600">
+                        <i class="fab fa-discord fa-lg"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" class="text-gray-500 hover:text-red-600">
+                        <i class="fab fa-youtube fa-lg"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-8 text-gray-500 text-sm">
+                    <p>&copy; 2023 Screwdom3D.org. Todos los derechos reservados. | Este es un sitio de fans con fines de entretenimiento.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fullscreen functionality
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.querySelector('iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        });
+        
+        // Play Now button scrolls to game
+        document.querySelector('.puzzle-btn').addEventListener('click', function() {
+            document.querySelector('.game-container').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+        
+        // Forum functionality
+        const badWords = ['idiot', 'stupid', 'hate', 'moron', 'suck', 'loser', 'fool'];
+        
+        document.getElementById('post-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value || 'Anónimo';
+            let message = document.getElementById('message').value;
+            
+            if (!message.trim()) {
+                alert('Por favor ingresa un mensaje');
+                return;
+            }
+            
+            // Filter bad words
+            badWords.forEach(word => {
+                const regex = new RegExp(word, 'gi');
+                message = message.replace(regex, '*'.repeat(word.length));
+            });
+            
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.className = 'forum-message p-5';
+            messageElement.innerHTML = `
+                <div class="flex items-center mb-3">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">${username}</h4>
+                        <p class="text-gray-500 text-sm">Justo ahora</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">${message}</p>
+                <button class="text-blue-600 font-medium reply-btn"><i class="fas fa-reply mr-1"></i> Responder</button>
+            `;
+            
+            // Prepend to forum
+            document.getElementById('forum-messages').prepend(messageElement);
+            
+            // Clear form
+            document.getElementById('message').value = '';
+            document.getElementById('username').value = '';
+            
+            // Add event listener to new reply button
+            messageElement.querySelector('.reply-btn').addEventListener('click', function() {
+                const replyText = prompt('Ingresa tu respuesta:');
+                if (replyText && replyText.trim()) {
+                    let filteredReply = replyText;
+                    badWords.forEach(word => {
+                        const regex = new RegExp(word, 'gi');
+                        filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                    });
+                    
+                    const replyElement = document.createElement('div');
+                    replyElement.className = 'reply-indent mt-4';
+                    replyElement.innerHTML = `
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">Anónimo</h4>
+                                    <p class="text-gray-500 text-xs">Justo ahora</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">${filteredReply}</p>
+                        </div>
+                    `;
+                    
+                    messageElement.appendChild(replyElement);
+                }
+            });
+        });
+        
+        // Add reply functionality to existing buttons
+        document.querySelectorAll('.reply-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const replyText = prompt('Ingresa tu respuesta:');
+                if (replyText && replyText.trim()) {
+                    let filteredReply = replyText;
+                    badWords.forEach(word => {
+                        const regex = new RegExp(word, 'gi');
+                        filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                    });
+                    
+                    const messageElement = this.closest('.forum-message');
+                    const replyElement = document.createElement('div');
+                    replyElement.className = 'reply-indent mt-4';
+                    replyElement.innerHTML = `
+                        <div class="forum-message p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-3">
+                                    <h4 class="font-bold text-gray-800">Anónimo</h4>
+                                    <p class="text-gray-500 text-xs">Justo ahora</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">${filteredReply}</p>
+                        </div>
+                    `;
+                    
+                    messageElement.appendChild(replyElement);
+                }
+            });
+        });
+        
+        // Load more messages functionality
+        document.getElementById('load-more').addEventListener('click', function() {
+            const messages = [
+                {
+                    username: "AmanteRompecabezas",
+                    time: "Hace 3 días",
+                    message: "Juego esto con mis hijos cada tarde. Es educativo y divertido: ¡la combinación perfecta!"
+                },
+                {
+                    username: "JugadorEstratégico",
+                    time: "Hace 4 días",
+                    message: "Solución nivel 58: gira el tornillo azul primero, luego el verde. ¡Me llevó una eternidad descubrirlo!"
+                },
+                {
+                    username: "FanASMR",
+                    time: "Hace 5 días",
+                    message: "El sonido cuando resuelves un rompecabezas es tan satisfactorio. ¡La mejor experiencia ASMR en un juego!"
+                }
+            ];
+            
+            messages.forEach(msg => {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'forum-message p-5';
+                messageElement.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">${msg.username}</h4>
+                            <p class="text-gray-500 text-sm">${msg.time}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">${msg.message}</p>
+                    <button class="text-blue-600 font-medium reply-btn mt-3"><i class="fas fa-reply mr-1"></i> Responder</button>
+                `;
+                
+                document.getElementById('forum-messages').appendChild(messageElement);
+                
+                // Add event listener to new reply button
+                messageElement.querySelector('.reply-btn').addEventListener('click', function() {
+                    const replyText = prompt('Ingresa tu respuesta:');
+                    if (replyText && replyText.trim()) {
+                        let filteredReply = replyText;
+                        badWords.forEach(word => {
+                            const regex = new RegExp(word, 'gi');
+                            filteredReply = filteredReply.replace(regex, '*'.repeat(word.length));
+                        });
+                        
+                        const replyElement = document.createElement('div');
+                        replyElement.className = 'reply-indent mt-4';
+                        replyElement.innerHTML = `
+                            <div class="forum-message p-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                    <div class="ml-3">
+                                        <h4 class="font-bold text-gray-800">Anónimo</h4>
+                                        <p class="text-gray-500 text-xs">Justo ahora</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700">${filteredReply}</p>
+                            </div>
+                        `;
+                        
+                        messageElement.appendChild(replyElement);
+                    }
+                });
+            });
+            
+            this.textContent = "No Hay Más Mensajes";
+            this.disabled = true;
+        });
+    </script>
+</body>
+</html>
